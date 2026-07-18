@@ -1,212 +1,271 @@
-<!DOCTYPE html>
-<html lang="kk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QYZ UZATU</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="google" content="notranslate">
+
+    <title>ҚЫЗ ҰЗАТУ | QYZ UZATU</title>
+
+    <meta property="og:title" content="ҚЫЗ ҰЗАТУ">
+
+    <meta
+        property="og:description"
+        content="Сіздерді қуанышымыздың куәсі болуға шақырамыз">
+
+    <meta
+        property="og:type"
+        content="website">
+
+    <meta
+        property="og:url"
+        content="https://print09krg.github.io/QYZ-UZATU/">
+
+    <meta
+        property="og:image"
+        content="https://print09krg.github.io/QYZ-UZATU/images/preview.jpg">
+
+    <link
+        rel="icon"
+        href="favicon.png">
+
+    <link
+        rel="preload"
+        href="intro.mp4"
+        as="video"
+        type="video/mp4">
+
+    <link
+        rel="preload"
+        href="music.mp3"
+        as="audio"
+        type="audio/mpeg">
+
+    <link
+        rel="stylesheet"
+        href="style.css">
 </head>
 
 <body>
 
+<audio
+    id="bgMusic"
+    src="music.mp3"
+    preload="auto"
+    loop>
+</audio>
 
-<audio id="backgroundMusic" src="music.mp3" loop></audio>
+<section
+    class="screen video-screen"
+    id="screen1">
 
+    <video
+        id="introVideo"
+        playsinline
+        preload="auto"
+        poster="images/poster.jpg">
 
-<!-- ЭКРАН 1 -->
-<section class="screen video-screen" id="screen1">
+        <source
+            src="intro.mp4"
+            type="video/mp4">
 
-<video id="introVideo" muted playsinline preload="auto">
-    <source src="intro.mp4" type="video/mp4">
-</video>
+    </video>
 
+    <button
+        id="startButton"
+        class="start-button">
 
-<button id="startButton" class="start-button">
-    Бастау
-</button>
+        Бастау
 
-
-</section>
-
-
-
-
-
-<!-- ЭКРАН 2 -->
-<section class="screen image-screen">
-
-<img class="background-image" src="images/priglashenie.jpg">
-
-<img class="ornament ornament-one"
-src="images/ornament.png">
-
-<img class="ornament ornament-two"
-src="images/ornament.png">
+    </button>
 
 </section>
 
+<section
+    class="screen"
+    id="screen2">
 
+    <img
+        class="background-image"
+        src="images/priglashenie.jpg"
+        alt="">
 
+    <img
+        class="ornament ornament-one"
+        src="images/ornament.png"
+        alt="">
 
-
-
-<!-- ЭКРАН 3 -->
-<section class="screen image-screen">
-
-<img class="background-image" src="images/calendar.jpg">
-
-
-<div class="timer">
-
-<div>
-<span id="days">00</span>
-<small>күн</small>
-</div>
-
-<div>
-<span id="hours">00</span>
-<small>сағат</small>
-</div>
-
-<div>
-<span id="minutes">00</span>
-<small>мин</small>
-</div>
-
-<div>
-<span id="seconds">00</span>
-<small>сек</small>
-</div>
-
-</div>
-
-
-<img class="ornament calendar-one"
-src="images/ornament.png">
-
-<img class="ornament calendar-two"
-src="images/ornament.png">
-
+    <img
+        class="ornament ornament-two"
+        src="images/ornament.png"
+        alt="">
 
 </section>
 
+<section
+    class="screen"
+    id="screen3">
 
+    <img
+        class="background-image"
+        src="images/calendar.jpg"
+        alt="">
 
+    <img
+        class="ornament calendar-one"
+        src="images/ornament.png"
+        alt="">
 
+    <img
+        class="ornament calendar-two"
+        src="images/ornament.png"
+        alt="">
 
+    <div
+        id="timer"
+        class="timer">
 
+        <div>
 
-<!-- ЭКРАН 4 -->
-<section class="screen image-screen">
+            <span id="days">00</span>
 
-<img class="background-image" src="images/restaurant.jpg">
+            <small>КҮН</small>
 
+        </div>
 
-<a class="main-button"
-href="https://go.2gis.com/oMi0v"
-target="_blank">
+        <div>
 
-Бағытты ашу
+            <span id="hours">00</span>
 
-</a>
+            <small>САҒАТ</small>
 
+        </div>
+                <div>
 
-</section>
+            <span id="minutes">00</span>
 
+            <small>МИН</small>
 
+        </div>
 
+        <div>
 
+            <span id="seconds">00</span>
 
+            <small>СЕК</small>
 
+        </div>
 
-
-<!-- ЭКРАН 5 -->
-<section class="screen image-screen">
-
-<img class="background-image" src="images/organizator.jpg">
-
-
-<img class="ornament organizer-one"
-src="images/ornament.png">
-
-<img class="ornament organizer-two"
-src="images/ornament.png">
-
-
-</section>
-
-
-
-
-
-
-
-
-<!-- ЭКРАН 6 -->
-<section class="screen image-screen">
-
-<img class="background-image" src="images/opros.jpg">
-
-
-<div class="survey-box">
-
-
-<a class="main-button"
-href="https://docs.google.com/forms/d/e/1FAIpQLSeGKM8yr-TycYPWJp2HcV-cEz4FapKGVsrJFfp6cmEsNFmbjw/viewform?usp=publish-editor"
-target="_blank">
-
-Қатысатыңызды растау
-
-</a>
-
-
-<p>
-Сауалнамаға жауап беруіңізді сұраймыз
-</p>
-
-
-</div>
-
+    </div>
 
 </section>
 
+<section
+    class="screen"
+    id="screen4">
 
+    <img
+        class="background-image"
+        src="images/restaurant.jpg"
+        alt="">
 
+    <a
+        class="main-button"
+        href="https://go.2gis.com/oMi0v"
+        target="_blank"
+        rel="noopener">
 
+        Бағытты ашу
 
-
-
-
-<!-- ЭКРАН 7 -->
-<section class="screen image-screen">
-
-<img class="background-image"
-src="images/konec.jpg">
-
-
-<div class="final-text">
-
-Сіздерді біздің ерекше кешімізде күтеміз!
-
-</div>
-
-
-
-<img class="ornament final-one"
-src="images/ornament.png">
-
-<img class="ornament final-two"
-src="images/ornament.png">
-
+    </a>
 
 </section>
 
+<section
+    class="screen"
+    id="screen5">
 
+    <img
+        class="background-image"
+        src="images/organizator.jpg"
+        alt="">
 
+    <img
+        class="ornament organizer-one"
+        src="images/ornament.png"
+        alt="">
 
+    <img
+        class="ornament organizer-two"
+        src="images/ornament.png"
+        alt="">
 
+</section>
+
+<section
+    class="screen"
+    id="screen6">
+
+    <img
+        class="background-image"
+        src="images/opros.jpg"
+        alt="">
+
+    <div
+        class="survey-box">
+
+        <a
+            class="main-button"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeGKM8yr-TycYPWJp2HcV-cEz4FapKGVsrJFfp6cmEsNFmbjw/viewform?usp=dialog"
+            target="_blank"
+            rel="noopener">
+
+            Қатысатыңызды растау
+
+        </a>
+
+        <p>
+
+            Сауалнамаға жауап беруіңізді сұраймыз
+
+        </p>
+
+    </div>
+
+</section>
+
+<section
+    class="screen"
+    id="screen7">
+
+    <img
+        class="background-image"
+        src="images/konec.jpg"
+        alt="">
+
+    <img
+        class="ornament final-one"
+        src="images/ornament.png"
+        alt="">
+
+    <img
+        class="ornament final-two"
+        src="images/ornament.png"
+        alt="">
+
+    <div
+        class="final-text">
+
+        Сіздерді біздің ерекше кешімізде күтеміз!
+
+    </div>
+
+</section>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
