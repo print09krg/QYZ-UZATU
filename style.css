@@ -1,605 +1,337 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-
 
 html,
-body {
-
-    width: 100%;
-    height: 100%;
-
-    overflow-x: hidden;
-
-    background: #000;
-
-    font-family: "Times New Roman", serif;
-
+body{
+    width:100%;
+    height:100%;
+    overflow-x:hidden;
+    background:#000;
+    font-family:"Times New Roman",serif;
+    scroll-behavior:smooth;
 }
 
-
-
-body {
-
-    scroll-behavior: smooth;
-
+body{
+    max-width:430px;
+    margin:auto;
 }
 
-
-
-
-
-/* Экраны */
-
-.screen {
-
-    width: 100%;
-
-    height: 100vh;
-
-    height: 100dvh;
-
-    position: relative;
-
-    overflow: hidden;
-
-    opacity: 0;
-
-    animation: appear 0.8s ease forwards;
-
+.screen{
+    position:relative;
+    width:100%;
+    height:100vh;
+    height:100dvh;
+    overflow:hidden;
+    opacity:0;
+    animation:fadeScreen .8s ease forwards;
 }
 
-
-
-@keyframes appear {
-
-    from {
+@keyframes fadeScreen{
+    from{
         opacity:0;
     }
-
-    to {
+    to{
         opacity:1;
     }
-
 }
 
-
-
-
-
-
-/* Видео */
-
-.video-screen {
-
+.video-screen{
     background:#000;
-
 }
 
-
-.video-screen video {
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-
-
-
-
-
-
-
-/* Фон */
-
-.background-image {
-
+.video-screen video{
     position:absolute;
-
     inset:0;
-
     width:100%;
-
     height:100%;
-
     object-fit:cover;
-
 }
 
-
-
-
-
-
-
-
-/* Орнаменты */
-
-.ornament {
-
+.background-image{
     position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    animation:zoomPhoto 18s linear forwards;
+}
 
+@keyframes zoomPhoto{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.03);
+    }
+}
+
+.ornament{
+    position:absolute;
     width:34%;
-
-    opacity:0.25;
-
+    opacity:.25;
     pointer-events:none;
-
-}
-
-
-
-.ornament {
-
     animation-duration:18s;
-
     animation-iteration-count:infinite;
-
     animation-timing-function:linear;
-
 }
 
-
-
-
-.ornament-one {
-
+.ornament-one{
     top:5%;
-
     left:3%;
-
     animation-name:rotateForward;
-
 }
 
-
-
-.ornament-two {
-
+.ornament-two{
     bottom:5%;
-
     right:3%;
-
     animation-name:rotateBack;
-
 }
 
-
-
-
-
-
-/* экран 3 */
-
-.calendar-one {
-
+.calendar-one{
     width:22%;
-
     top:7%;
-
     left:5%;
-
     animation-name:rotateForward;
-
 }
 
-
-
-.calendar-two {
-
+.calendar-two{
     width:22%;
-
     bottom:7%;
-
     right:5%;
-
     animation-name:rotateBack;
-
 }
 
-
-
-
-
-
-
-/* экран 5 */
-
-.organizer-one {
-
+.organizer-one{
     top:5%;
-
     right:5%;
-
     animation-name:rotateBack;
-
 }
 
-
-
-.organizer-two {
-
+.organizer-two{
     bottom:5%;
-
     left:5%;
-
     animation-name:rotateForward;
-
 }
 
-
-
-
-
-
-
-/* экран 7 */
-
-.final-one {
-
+.final-one{
     top:4%;
-
     left:4%;
-
     animation-name:rotateForward;
-
 }
 
-
-.final-two {
-
+.final-two{
     bottom:4%;
-
     right:4%;
-
     animation-name:rotateBack;
-
 }
 
-
-
-
-
-@keyframes rotateForward {
-
-    from {
-
+@keyframes rotateForward{
+    from{
         transform:rotate(0deg);
-
     }
-
-    to {
-
+    to{
         transform:rotate(360deg);
-
     }
-
 }
 
-
-
-@keyframes rotateBack {
-
-    from {
-
+@keyframes rotateBack{
+    from{
         transform:rotate(0deg);
-
     }
-
-    to {
-
+    to{
         transform:rotate(-360deg);
+    }
+}
 
+.start-button{
+    position:absolute;
+    left:50%;
+    bottom:9%;
+    transform:translateX(-50%);
+    width:78%;
+    max-width:340px;
+    height:64px;
+    border:none;
+    border-radius:40px;
+    background:rgba(255,255,255,.95);
+    color:#9c741d;
+    border:2px solid #c8a64b;
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:.8px;
+    box-shadow:
+        0 8px 26px rgba(0,0,0,.25),
+        0 0 24px rgba(200,166,75,.35);
+    backdrop-filter:blur(8px);
+    animation:startGlow 2.5s ease-in-out infinite;
+    z-index:20;
+    cursor:pointer;
+}
+
+.start-button:active{
+    transform:translateX(-50%) scale(.96);
+}
+
+@keyframes startGlow{
+    0%{
+        box-shadow:
+        0 8px 20px rgba(0,0,0,.20),
+        0 0 12px rgba(200,166,75,.20);
     }
 
+    50%{
+        box-shadow:
+        0 8px 28px rgba(0,0,0,.24),
+        0 0 32px rgba(200,166,75,.45);
+    }
+
+    100%{
+        box-shadow:
+        0 8px 20px rgba(0,0,0,.20),
+        0 0 12px rgba(200,166,75,.20);
+    }
 }
-
-
-
-
-
-
-
-/* Таймер */
-
-
-.timer {
-
+.main-button{
     position:absolute;
-
-    bottom:8%;
-
     left:50%;
-
-    transform:translateX(-50%);
-
-
-    display:flex;
-
-    gap:8px;
-
-
-    padding:12px 16px;
-
-
-    background:rgba(255,255,255,0.75);
-
-    border-radius:25px;
-
-
-}
-
-
-
-.timer div {
-
-    text-align:center;
-
-    min-width:45px;
-
-}
-
-
-
-.timer span {
-
-    display:block;
-
-    color:#a57c28;
-
-    font-size:24px;
-
-    font-weight:bold;
-
-}
-
-
-
-.timer small {
-
-    font-size:12px;
-
-    color:#333;
-
-}
-
-
-
-
-
-
-
-/* Кнопки */
-
-
-.main-button {
-
-
-    position:absolute;
-
-
     bottom:7%;
-
-
-    left:50%;
-
-
     transform:translateX(-50%);
-
-
-
-    width:82%;
-
-    min-height:58px;
-
-
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
-
-
-    background:white;
-
-
-    border:2px solid #c8a64b;
-
-
-    border-radius:35px;
-
-
-
-    color:#a57c28;
-
-
-    font-size:21px;
-
-
-    font-weight:bold;
-
-
-
+    width:80%;
+    max-width:340px;
+    height:62px;
     text-decoration:none;
-
-
-    transition:0.15s;
-
-
-}
-
-
-
-.main-button:active {
-
-
-    transform:translateX(-50%) scale(0.96);
-
-
-}
-
-
-
-
-
-
-
-/* Экран 6 */
-
-
-.survey-box {
-
-
-    position:absolute;
-
-
-    width:100%;
-
-
-    bottom:10%;
-
-
-    text-align:center;
-
-
-}
-
-
-
-.survey-box .main-button {
-
-
-    position:relative;
-
-
-    bottom:auto;
-
-
-}
-
-
-
-.survey-box p {
-
-
-    margin-top:15px;
-
-
-    color:white;
-
-
-    font-size:16px;
-
-
-    text-shadow:0 2px 6px #000;
-
-
-}
-
-
-
-
-
-
-
-/* Финальный текст */
-
-
-.final-text {
-
-
-    position:absolute;
-
-
-    bottom:8%;
-
-
-    width:100%;
-
-
-    padding:0 20px;
-
-
-
-    text-align:center;
-
-
-    color:white;
-
-
-    font-size:25px;
-
-
-    font-weight:bold;
-
-
-
-    text-shadow:0 2px 8px #000;
-
-
-}
-
-
-
-
-
-
-
-/* Только телефон */
-
-@media(min-width:768px){
-
-
-body {
-
-    max-width:430px;
-
-    margin:auto;
-
-}
-
-
-}
-.start-button {
-
-    position:absolute;
-
-    left:50%;
-    bottom:10%;
-
-    transform:translateX(-50%);
-
-
-    width:70%;
-    height:60px;
-
-
-    background:white;
-
-    border:2px solid #c8a64b;
-
-    border-radius:35px;
-
-
-    color:#a57c28;
-
+    color:#9c741d;
     font-size:22px;
-
-    font-weight:bold;
-
-
+    font-weight:700;
+    letter-spacing:.5px;
+    background:rgba(255,255,255,.94);
+    border:2px solid #c8a64b;
+    border-radius:40px;
+    backdrop-filter:blur(8px);
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.20),
+        0 0 18px rgba(200,166,75,.28);
+    transition:
+        transform .18s,
+        box-shadow .25s,
+        background .25s;
 }
 
+.main-button:hover{
+    background:#fff;
+    box-shadow:
+        0 8px 28px rgba(0,0,0,.25),
+        0 0 28px rgba(200,166,75,.42);
+}
 
-.start-button:active {
+.main-button:active{
+    transform:translateX(-50%) scale(.96);
+}
 
-    transform:translateX(-50%) scale(0.96);
+.timer{
+    position:absolute;
+    left:50%;
+    bottom:8%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:10px;
+    padding:12px;
+    border-radius:28px;
+    background:rgba(255,255,255,.78);
+    backdrop-filter:blur(8px);
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.20),
+        0 0 18px rgba(200,166,75,.22);
+}
 
+.timer div{
+    width:58px;
+    text-align:center;
+}
+
+.timer span{
+    display:block;
+    color:#a57c28;
+    font-size:28px;
+    font-weight:700;
+    line-height:1;
+}
+
+.timer small{
+    display:block;
+    margin-top:6px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.6px;
+    color:#6f5830;
+    text-transform:uppercase;
+}
+
+.survey-box{
+    position:absolute;
+    left:0;
+    bottom:10%;
+    width:100%;
+    text-align:center;
+}
+
+.survey-box .main-button{
+    position:relative;
+    left:auto;
+    bottom:auto;
+    transform:none;
+    margin:0 auto;
+}
+
+.survey-box .main-button:active{
+    transform:scale(.96);
+}
+
+.survey-box p{
+    margin-top:16px;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    text-shadow:0 2px 8px rgba(0,0,0,.7);
+}
+
+.final-text{
+    position:absolute;
+    left:50%;
+    bottom:8%;
+    transform:translateX(-50%);
+    width:90%;
+    text-align:center;
+    color:#d8b25a;
+    font-size:30px;
+    font-weight:700;
+    line-height:1.35;
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.65),
+        0 0 12px rgba(216,178,90,.30);
+    animation:fadeFinal 2s ease forwards;
+}
+
+@keyframes fadeFinal{
+    from{
+        opacity:0;
+        transform:translateX(-50%) translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(-50%) translateY(0);
+    }
+}
+
+@media (min-width:768px){
+    body{
+        max-width:430px;
+        margin:auto;
+    }
 }
